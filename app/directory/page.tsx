@@ -5,7 +5,16 @@ import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Alumni Directory',
-  description: 'Find classmates and teachers from Vivekananda Vidyalayam, Vangoor.',
+  description:
+    'Find classmates and teachers from Vivekananda Vidyalayam, Vangoor, Nagarkurnool. Reconnect with your batch through the alumni portal.',
+  alternates: { canonical: '/directory' },
+  openGraph: {
+    title: 'Alumni Directory | Vivekananda Vidyalayam',
+    description:
+      'Find classmates and teachers from Vivekananda Vidyalayam, Vangoor, Nagarkurnool.',
+    url: `${site.url}/directory`,
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: site.name }],
+  },
 };
 
 export default function DirectoryPage() {

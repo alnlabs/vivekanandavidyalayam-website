@@ -5,7 +5,16 @@ import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Old Memories Gallery',
-  description: 'Archival photographs and memories from Vivekananda Vidyalayam, Vangoor.',
+  description:
+    'Archival photographs and memories from Vivekananda Vidyalayam, Vangoor, Nagarkurnool — morning assembly, storytelling Saturdays, and class portraits.',
+  alternates: { canonical: '/gallery' },
+  openGraph: {
+    title: 'Old Memories Gallery | Vivekananda Vidyalayam',
+    description:
+      'Archival photographs and memories from Vivekananda Vidyalayam, Vangoor, Nagarkurnool.',
+    url: `${site.url}/gallery`,
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: site.name }],
+  },
 };
 
 export default function GalleryPage() {

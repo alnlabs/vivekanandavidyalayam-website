@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { site } from '@/lib/site';
+import { faqJsonLd, site } from '@/lib/site';
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
+      />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -177,6 +181,21 @@ export default function HomePage() {
                 {site.village} · {site.pincode}
               </p>
             </div>
+          </div>
+        </section>
+
+        <section id="faq" className="section cream">
+          <div className="wrap">
+            <p className="label saffron">Questions</p>
+            <h2 className="title-saffron">Frequently asked</h2>
+            <dl className="faq-list">
+              {site.faq.map((item) => (
+                <div key={item.q} className="faq-item">
+                  <dt>{item.q}</dt>
+                  <dd>{item.a}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
       </main>

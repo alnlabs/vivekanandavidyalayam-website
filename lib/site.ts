@@ -11,12 +11,43 @@ export const site = {
     'Vivekananda Vidyalayam was a school in Vangoor, Nagarkurnool district, Telangana (LKG to Class 7), inspired by Swami Vivekananda. Led by Principal Ramgopal Sir and Vice Principal Ashok Sir. The school has closed; its alumni community continues online.',
   keywords: [
     'Vivekananda Vidyalayam',
+    'Vivekananda Vidyalayam Vangoor',
+    'Vivekananda Vidyalayam Nagarkurnool',
     'Vangoor',
+    'Vangoor school',
     'Nagarkurnool',
+    'Nagarkurnool school',
+    'Telangana',
     'Vivekananda Vidyalayam alumni',
+    'Vangoor alumni',
     '509349',
-    'Ramgopal',
+    'Ramgopal Sir',
     'Ashok Sir',
+    'Vivekananda Vidyalayam reunion',
+    'old school Vangoor',
+  ],
+
+  faq: [
+    {
+      q: 'Where was Vivekananda Vidyalayam located?',
+      a: 'Vivekananda Vidyalayam was in Vangoor village, Nagarkurnool district, Telangana — PIN 509349.',
+    },
+    {
+      q: 'Which classes did the school teach?',
+      a: 'The school taught from LKG to Class 7.',
+    },
+    {
+      q: 'Who led Vivekananda Vidyalayam?',
+      a: 'The school was led by Principal Ramgopal Sir and Vice Principal Ashok Sir, along with many dedicated teachers.',
+    },
+    {
+      q: 'Is Vivekananda Vidyalayam still open?',
+      a: 'No. The school has closed, but its alumni community stays connected online through the alumni portal at alumni.alnlabs.com.',
+    },
+    {
+      q: 'How can alumni reconnect?',
+      a: 'Former students and teachers can join the alumni portal at alumni.alnlabs.com to find batchmates, share memories, and stay in touch.',
+    },
   ],
 
   grades: 'LKG to Class 7',
@@ -54,6 +85,7 @@ export const site = {
     { label: 'Inspiration', href: '/#inspiration' },
     { label: 'Gallery', href: '/gallery' },
     { label: 'Directory', href: '/directory' },
+    { label: 'FAQ', href: '/#faq' },
   ],
 
   hero: {
@@ -224,6 +256,41 @@ export function schoolJsonLd() {
         jobTitle: site.leadership.vicePrincipal.role,
       },
     ],
+    foundingLocation: {
+      '@type': 'Place',
+      name: `${site.village}, ${site.district}, ${site.state}`,
+    },
     sameAs: [site.alumniUrl],
+  };
+}
+
+export function faqJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${site.url}/#faq`,
+    mainEntity: site.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+}
+
+export function breadcrumbJsonLd(
+  items: { name: string; path: string }[]
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: `${site.url}${item.path}`,
+    })),
   };
 }
