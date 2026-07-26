@@ -1,0 +1,12 @@
+# Public heritage site — loopback only; Caddy terminates TLS.
+#
+#   docker compose -f docker-compose.prod.yml up -d --build
+#
+services:
+  web:
+    build: .
+    image: vivekananda-website:prod
+    container_name: vivekananda-website-prod
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${WEB_HOST_PORT:-9103}:80"
