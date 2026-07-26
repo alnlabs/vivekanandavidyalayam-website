@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { VisitorCounter } from '@/components/VisitorCounter';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,6 +13,7 @@ export function Footer() {
           <p className="footer-copy">
             © {year} {site.name}. Preserving the legacy of spiritual growth and academic excellence.
           </p>
+          <VisitorCounter />
           <p className="footer-credit">
             Designed and developed by{' '}
             <a href="https://alnlabs.com" rel="noopener noreferrer">

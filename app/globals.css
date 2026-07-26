@@ -731,6 +731,32 @@ p {
   letter-spacing: 0.03em;
 }
 
+.visitor-count {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 12px 0 0;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: rgba(253, 251, 247, 0.55);
+}
+
+.visitor-count-label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.visitor-count-value {
+  font-family: var(--font-display), serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba(253, 251, 247, 0.9);
+  letter-spacing: 0;
+}
+
 .footer-credit {
   margin-top: 10px;
   font-size: 0.8rem;
