@@ -43,14 +43,22 @@ Same pattern as alumni: build static site in Docker, bind nginx to loopback, Cad
 # 1) Clone
 sudo mkdir -p /opt/vivekanandavidyalayam && sudo chown "$USER":"$USER" /opt/vivekanandavidyalayam
 cd /opt/vivekanandavidyalayam
-git clone https://github.com/alnlabs/vivekanandavidyalayam-website.git website
-cd website
+git clone https://github.com/alnlabs/vivekanandavidyalayam-website.git vvschool-website
+cd vvschool-website
 
 # 2) Run (loopback :9103)
 docker compose -f docker-compose.prod.yml up -d --build
 
 # 3) Smoke test
 curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:9103/
+```
+
+### Redeploy after changes
+
+```bash
+cd /opt/vivekanandavidyalayam/vvschool-website
+git pull
+docker compose -f docker-compose.prod.yml up -d --build
 ```
 
 **Caddy** — append (do not wipe Ride Buddy / alumni blocks):
