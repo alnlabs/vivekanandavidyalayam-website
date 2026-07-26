@@ -417,6 +417,52 @@ p {
   color: var(--secondary);
 }
 
+/* Leadership */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 36px;
+}
+
+.leadership-role {
+  margin: 0 0 6px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--saffron);
+}
+
+.leadership-grid h3 {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+}
+
+.leadership-grid p:last-child {
+  margin: 0;
+  color: var(--secondary);
+  line-height: 1.65;
+}
+
+.teachers-note {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.teachers-note h3 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+}
+
+.teachers-note p {
+  margin: 0;
+  color: var(--secondary);
+  line-height: 1.7;
+  max-width: 52rem;
+}
+
 /* Inspiration */
 .inspiration-grid {
   display: grid;
@@ -942,6 +988,7 @@ p {
   .history-grid,
   .inspiration-grid,
   .place-grid,
+  .leadership-grid,
   .directory-cta-inner {
     grid-template-columns: 1fr;
   }

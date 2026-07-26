@@ -50,7 +50,30 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="inspiration" className="section antique">
+        <section id="leadership" className="section antique">
+          <div className="wrap">
+            <p className="label saffron">Leadership</p>
+            <h2>Principal &amp; Vice Principal</h2>
+            <div className="leadership-grid">
+              <article>
+                <p className="leadership-role">{site.leadership.principal.role}</p>
+                <h3>{site.leadership.principal.name}</h3>
+                <p>{site.leadership.principal.note}</p>
+              </article>
+              <article>
+                <p className="leadership-role">{site.leadership.vicePrincipal.role}</p>
+                <h3>{site.leadership.vicePrincipal.name}</h3>
+                <p>{site.leadership.vicePrincipal.note}</p>
+              </article>
+            </div>
+            <div className="teachers-note">
+              <h3>{site.teachersRemembered.title}</h3>
+              <p>{site.teachersRemembered.body}</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="inspiration" className="section cream">
           <div className="wrap inspiration-grid">
             <figure className="portrait-frame">
               <img
@@ -131,6 +154,14 @@ export default function HomePage() {
                 <li>
                   <strong>Classes</strong>
                   <span>{site.grades}</span>
+                </li>
+                <li>
+                  <strong>Principal</strong>
+                  <span>{site.leadership.principal.name}</span>
+                </li>
+                <li>
+                  <strong>Vice Principal</strong>
+                  <span>{site.leadership.vicePrincipal.name}</span>
                 </li>
                 <li>
                   <strong>Alumni</strong>
